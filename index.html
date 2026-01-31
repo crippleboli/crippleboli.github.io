@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>crippleboli blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* 导航横贯线 */
+    .nav-line { border-bottom: 1px solid #e2e8f0; width: 100vw; position: absolute; left: 50%; transform: translateX(-50%); top: 3.5rem; z-index: -1; }
+    /* 核心边框风格 */
+    .sketch-box { border: 2px solid #334155; border-radius: 0.75rem; background: white; }
+    /* 隐藏滚动条 */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    /* 内容行高度控制 */
+    .content-row { height: 1.8rem; display: flex; align-items: center; }
+    /* 时间线轴线位置，精确对齐间隙 */
+    .timeline-axis { position: absolute; left: 240px; top: 0; bottom: 0; width: 2px; background: #334155; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden pb-20">
+
+<header class="relative h-14 flex items-center mb-16">
+  <div class="nav-line"></div>
+  <div class="max-w-[95%] mx-auto w-full flex justify-between items-center px-4">
+    <h1 class="text-xl font-black italic tracking-tighter">crippleboli <span class="text-blue-600">blog</span></h1>
+    <nav>
+      <ul class="flex space-x-10 font-bold text-slate-500 text-[12px]">
+        <li class="hover:text-blue-600 cursor-pointer">首页</li>
+        <li class="hover:text-blue-600 cursor-pointer">项目</li>
+        <li class="hover:text-blue-600 cursor-pointer">基础</li>
+        <li class="hover:text-blue-600 cursor-pointer">算法</li>
+        <li class="hover:text-blue-600 cursor-pointer">材料</li>
+        <li class="hover:text-blue-600 cursor-pointer">笔记</li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-[95%] mx-auto px-4">
+
+  <div class="flex flex-col md:flex-row gap-16 items-stretch mb-24">
+
+    <div class="w-full md:w-[240px] flex-none flex flex-col">
+      <div class="aspect-square rounded-2xl overflow-hidden border-2 border-slate-700 shadow-sm mb-6 bg-white">
+        <img src="assets/images/avatar.png" alt="avatar" class="w-full h-full object-cover">
+      </div>
+      <div class="pt-6 border-t-2 border-dashed border-slate-200">
+        <p class="text-[12px] leading-relaxed text-slate-500 italic">
+          专注于底层逻辑，记录每一行有意义的代码。
+        </p>
+        <p class="mt-2 text-right text-[11px] font-bold text-slate-400">— crippleboli</p>
+      </div>
+    </div>
+
+    <div class="flex-1 sketch-box p-6 shadow-sm flex flex-col justify-between">
+      <div class="divide-y divide-slate-100 flex flex-col justify-between h-full">
+        <div>
+          <div class="content-row font-bold text-blue-600 uppercase text-[10px] tracking-widest">01. Projects / 项目展示</div>
+          <div class="content-row space-x-3">
+            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[10px] text-slate-600 hover:border-blue-400 cursor-pointer">个人主页模板</span>
+            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[10px] text-slate-600 hover:border-blue-400 cursor-pointer">C++ 高性能服务器</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="content-row font-bold text-emerald-600 uppercase text-[10px] tracking-widest">02. Basic / 基础代码</div>
+          <div class="content-row space-x-3">
+            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[10px] text-slate-600 hover:border-emerald-400 cursor-pointer">内存管理</span>
+            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[10px] text-slate-600 hover:border-emerald-400 cursor-pointer">并发锁机制</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="content-row font-bold text-orange-600 uppercase text-[10px] tracking-widest">03. Algorithms / 算法练习</div>
+          <div class="content-row space-x-3">
+            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[10px] text-slate-600 hover:border-orange-400 cursor-pointer">二叉树 DFS</span>
+            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[10px] text-slate-600 hover:border-orange-400 cursor-pointer">动态规划</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="content-row font-bold text-purple-600 uppercase text-[10px] tracking-widest">04. Materials / 参考材料</div>
+          <div class="content-row space-x-3">
+            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[10px] text-slate-600 hover:border-purple-400 cursor-pointer">CSAPP 笔记</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="content-row font-bold text-rose-600 uppercase text-[10px] tracking-widest">05. Notes / 随笔感悟</div>
+          <div class="content-row space-x-3">
+            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[10px] text-slate-600 hover:border-rose-400 cursor-pointer">2026 程序员生存指南</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative min-h-[300px]">
+    <div class="timeline-axis"></div>
+    <div class="space-y-12">
+
+      <div class="relative flex items-center">
+        <div class="absolute left-[233px] w-4 h-4 rounded-full bg-white border-2 border-slate-800 z-10"></div>
+        <div class="w-[240px] text-right pr-12 font-mono text-[11px] text-slate-400">2026.01.31</div>
+        <div class="flex-1 border-b border-dashed border-slate-300 pb-1 ml-16 overflow-hidden whitespace-nowrap">
+          <span class="font-bold text-xs mr-4 text-blue-600 uppercase">System</span>
+          <span class="text-[12px] text-slate-600 italic">完成 GitHub 大开阔风格布局，上线相对路径头像文件</span>
+        </div>
+      </div>
+
+      <div class="relative flex items-center">
+        <div class="absolute left-[233px] w-4 h-4 rounded-full bg-white border-2 border-slate-800 z-10"></div>
+        <div class="w-[240px] text-right pr-12 font-mono text-[11px] text-slate-400">2026.01.25</div>
+        <div class="flex-1 border-b border-dashed border-slate-300 pb-1 ml-16 overflow-hidden whitespace-nowrap">
+          <span class="font-bold text-xs mr-4 text-emerald-600 uppercase">Dev</span>
+          <span class="text-[12px] text-slate-600 italic">初步规划项目文件夹结构：assets, data, js...</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
