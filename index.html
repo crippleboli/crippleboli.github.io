@@ -7,23 +7,23 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .nav-line { border-bottom: 1px solid #e2e8f0; width: 100vw; position: absolute; left: 50%; transform: translateX(-50%); top: 3.5rem; z-index: -1; }
-    .sketch-box { border: 2px solid #334155; border-radius: 0.85rem; background: white; }
+    .sketch-box { border: 2px solid #334155; border-radius: 0.6rem; background: white; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    /* 内容行高度适中 */
-    .content-row { height: 2.5rem; display: flex; align-items: center; }
-    /* 时间线轴线精确对齐 */
+    
+    /* 关键：大幅压缩内容行高度，实现“长条感” */
+    .content-row { height: 1.6rem; display: flex; align-items: center; }
     .timeline-axis { position: absolute; left: 240px; top: 0; bottom: 0; width: 2px; background: #334155; }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden pb-24">
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden pb-20">
 
-<header class="relative h-14 flex items-center mb-16">
+<header class="relative h-14 flex items-center mb-12">
   <div class="nav-line"></div>
-  <div class="max-w-[92%] mx-auto w-full flex justify-between items-center px-6">
-    <h1 class="text-2xl font-black italic tracking-tighter text-slate-900">crippleboli <span class="text-blue-600">blog</span></h1>
+  <div class="max-w-[95%] mx-auto w-full flex justify-between items-center px-4">
+    <h1 class="text-xl font-black italic tracking-tighter">crippleboli <span class="text-blue-600">blog</span></h1>
     <nav>
-      <ul class="flex space-x-10 font-bold text-slate-500 text-sm">
+      <ul class="flex space-x-8 font-bold text-slate-500 text-[13px]">
         <li class="hover:text-blue-600 cursor-pointer transition-colors">首页</li>
         <li class="hover:text-blue-600 cursor-pointer transition-colors">项目</li>
         <li class="hover:text-blue-600 cursor-pointer transition-colors">基础</li>
@@ -35,88 +35,75 @@
   </div>
 </header>
 
-<main class="max-w-[92%] mx-auto px-6">
+<main class="max-w-[95%] mx-auto px-4">
 
-  <div class="flex flex-col md:flex-row gap-16 items-stretch mb-24">
+  <div class="flex flex-col md:flex-row gap-10 items-start mb-16">
 
-    <div class="w-full md:w-[240px] flex-none flex flex-col">
-      <div class="aspect-square rounded-2xl overflow-hidden border-2 border-slate-700 shadow-sm mb-6 bg-white">
+    <div class="w-full md:w-[220px] flex-none">
+      <div class="aspect-square rounded-xl overflow-hidden border-2 border-slate-700 shadow-sm mb-4 bg-white">
         <img src="assets/images/avatar.png" alt="avatar" class="w-full h-full object-cover">
       </div>
-      <div class="pt-6 border-t-2 border-dashed border-slate-200">
-        <p class="text-sm leading-relaxed text-slate-500 italic">
+      <div class="pt-4 border-t-2 border-dashed border-slate-200">
+        <p class="text-[12px] leading-snug text-slate-500 italic">
           专注于底层逻辑，记录每一行有意义的代码。
         </p>
-        <p class="mt-2 text-right text-xs font-bold text-slate-400">— crippleboli</p>
       </div>
     </div>
 
-    <div class="flex-1 sketch-box p-8 shadow-sm flex flex-col justify-between">
-      <div class="divide-y divide-slate-100 flex flex-col justify-between h-full">
-        
-        <div>
-          <div class="content-row font-bold text-blue-600 uppercase text-xs tracking-widest">01. Projects / 项目展示</div>
-          <div class="flex flex-wrap gap-3">
-            <span class="px-3 py-1 bg-slate-50 rounded-md border border-slate-200 text-sm text-slate-600 hover:border-blue-400 hover:text-blue-600 cursor-pointer transition-all">个人主页模板</span>
-            <span class="px-3 py-1 bg-slate-50 rounded-md border border-slate-200 text-sm text-slate-600 hover:border-blue-400 hover:text-blue-600 cursor-pointer transition-all">C++ 高性能服务器</span>
+    <div class="flex-1 sketch-box p-4 shadow-sm">
+      <div class="space-y-3"> <div class="flex items-center border-b border-slate-50 pb-2">
+          <div class="w-32 flex-none font-bold text-blue-600 uppercase text-[10px] tracking-widest">01. Projects</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[12px] text-slate-600">个人主页模板</span>
+            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[12px] text-slate-600">C++ 高性能服务器</span>
           </div>
         </div>
 
-        <div>
-          <div class="content-row font-bold text-emerald-600 uppercase text-xs tracking-widest">02. Basic / 基础代码</div>
-          <div class="flex flex-wrap gap-3">
-            <span class="px-3 py-1 bg-slate-50 rounded-md border border-slate-200 text-sm text-slate-600 hover:border-emerald-400 hover:text-emerald-600 cursor-pointer transition-all">内存管理</span>
-            <span class="px-3 py-1 bg-slate-50 rounded-md border border-slate-200 text-sm text-slate-600 hover:border-emerald-400 hover:text-emerald-600 cursor-pointer transition-all">并发锁机制</span>
+        <div class="flex items-center border-b border-slate-50 pb-2">
+          <div class="w-32 flex-none font-bold text-emerald-600 uppercase text-[10px] tracking-widest">02. Basic</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[12px] text-slate-600">内存管理</span>
+            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[12px] text-slate-600">并发锁机制</span>
           </div>
         </div>
 
-        <div>
-          <div class="content-row font-bold text-orange-600 uppercase text-xs tracking-widest">03. Algorithms / 算法练习</div>
-          <div class="flex flex-wrap gap-3">
-            <span class="px-3 py-1 bg-slate-50 rounded-md border border-slate-200 text-sm text-slate-600 hover:border-orange-400 hover:text-orange-600 cursor-pointer transition-all">二叉树 DFS</span>
-            <span class="px-3 py-1 bg-slate-50 rounded-md border border-slate-200 text-sm text-slate-600 hover:border-orange-400 hover:text-orange-600 cursor-pointer transition-all">动态规划</span>
+        <div class="flex items-center border-b border-slate-50 pb-2">
+          <div class="w-32 flex-none font-bold text-orange-600 uppercase text-[10px] tracking-widest">03. Algorithms</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[12px] text-slate-600">二叉树 DFS</span>
+            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[12px] text-slate-600">动态规划</span>
           </div>
         </div>
 
-        <div>
-          <div class="content-row font-bold text-purple-600 uppercase text-xs tracking-widest">04. Materials / 参考材料</div>
-          <div class="flex flex-wrap gap-3">
-            <span class="px-3 py-1 bg-slate-50 rounded-md border border-slate-200 text-sm text-slate-600 hover:border-purple-400 hover:text-purple-600 cursor-pointer transition-all">CSAPP 笔记</span>
+        <div class="flex items-center border-b border-slate-50 pb-2">
+          <div class="w-32 flex-none font-bold text-purple-600 uppercase text-[10px] tracking-widest">04. Materials</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[12px] text-slate-600">CSAPP 笔记</span>
           </div>
         </div>
 
-        <div>
-          <div class="content-row font-bold text-rose-600 uppercase text-xs tracking-widest">05. Notes / 随笔感悟</div>
-          <div class="flex flex-wrap gap-3">
-            <span class="px-3 py-1 bg-slate-50 rounded-md border border-slate-200 text-sm text-slate-600 hover:border-rose-400 hover:text-rose-600 cursor-pointer transition-all">2026 程序员生存指南</span>
+        <div class="flex items-center">
+          <div class="w-32 flex-none font-bold text-rose-600 uppercase text-[10px] tracking-widest">05. Notes</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[12px] text-slate-600">2026 生存指南</span>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 
   <div class="relative min-h-[300px]">
-    <div class="timeline-axis"></div>
-    <div class="space-y-12">
-
+    <div class="timeline-axis !left-[220px] md:ml-[20px]"></div>
+    <div class="space-y-8">
       <div class="relative flex items-center">
-        <div class="absolute left-[233px] w-4 h-4 rounded-full bg-white border-2 border-slate-800 z-10"></div>
-        <div class="w-[240px] text-right pr-12 font-mono text-xs text-slate-400 font-bold uppercase">2026.01.31</div>
-        <div class="flex-1 border-b border-dashed border-slate-300 pb-2 ml-16 overflow-hidden whitespace-nowrap">
-          <span class="font-bold text-sm mr-4 text-blue-600 uppercase tracking-tight">System</span>
-          <span class="text-sm text-slate-600 italic">完成 GitHub 大开阔风格布局，上线相对路径头像文件</span>
+        <div class="absolute left-[233px] w-3 h-3 rounded-full bg-white border-2 border-slate-800 z-10"></div>
+        <div class="w-[220px] md:ml-[20px] text-right pr-8 font-mono text-[11px] text-slate-400">2026.01.31</div>
+        <div class="flex-1 border-b border-dashed border-slate-300 pb-1 ml-12 overflow-hidden whitespace-nowrap">
+          <span class="font-bold text-[12px] mr-4 text-blue-600 uppercase">System</span>
+          <span class="text-[13px] text-slate-600 italic">完成 GitHub 极窄长条风格优化</span>
         </div>
       </div>
-
-      <div class="relative flex items-center">
-        <div class="absolute left-[233px] w-4 h-4 rounded-full bg-white border-2 border-slate-800 z-10"></div>
-        <div class="w-[240px] text-right pr-12 font-mono text-xs text-slate-400 font-bold uppercase">2026.01.25</div>
-        <div class="flex-1 border-b border-dashed border-slate-300 pb-2 ml-16 overflow-hidden whitespace-nowrap">
-          <span class="font-bold text-sm mr-4 text-emerald-600 uppercase tracking-tight">Dev</span>
-          <span class="text-sm text-slate-600 italic">初步规划项目文件夹结构：assets, data, js...</span>
-        </div>
-      </div>
-
     </div>
   </div>
 </main>
