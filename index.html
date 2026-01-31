@@ -13,8 +13,8 @@
     /* 隐藏滚动条 */
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    /* 内容行高度控制 */
-    .content-row { height: 1.8rem; display: flex; align-items: center; }
+    /* 内容行高度随字号上调微增 */
+    .content-row { height: 2.2rem; display: flex; align-items: center; }
     /* 时间线轴线位置，精确对齐间隙 */
     .timeline-axis { position: absolute; left: 240px; top: 0; bottom: 0; width: 2px; background: #334155; }
   </style>
@@ -23,10 +23,10 @@
 
 <header class="relative h-14 flex items-center mb-16">
   <div class="nav-line"></div>
-  <div class="max-w-[95%] mx-auto w-full flex justify-between items-center px-4">
-    <h1 class="text-xl font-black italic tracking-tighter">crippleboli <span class="text-blue-600">blog</span></h1>
+  <div class="max-w-[95%] mx-auto w-full flex justify-between items-center px-6">
+    <h1 class="text-2xl font-black italic tracking-tighter">crippleboli <span class="text-blue-600">blog</span></h1>
     <nav>
-      <ul class="flex space-x-10 font-bold text-slate-500 text-[12px]">
+      <ul class="flex space-x-10 font-bold text-slate-500 text-sm">
         <li class="hover:text-blue-600 cursor-pointer">首页</li>
         <li class="hover:text-blue-600 cursor-pointer">项目</li>
         <li class="hover:text-blue-600 cursor-pointer">基础</li>
@@ -38,7 +38,7 @@
   </div>
 </header>
 
-<main class="max-w-[95%] mx-auto px-4">
+<main class="max-w-[95%] mx-auto px-6">
 
   <div class="flex flex-col md:flex-row gap-16 items-stretch mb-24">
 
@@ -47,50 +47,51 @@
         <img src="assets/images/avatar.png" alt="avatar" class="w-full h-full object-cover">
       </div>
       <div class="pt-6 border-t-2 border-dashed border-slate-200">
-        <p class="text-[12px] leading-relaxed text-slate-500 italic">
+        <p class="text-[13px] leading-relaxed text-slate-500 italic">
           专注于底层逻辑，记录每一行有意义的代码。
         </p>
-        <p class="mt-2 text-right text-[11px] font-bold text-slate-400">— crippleboli</p>
+        <p class="mt-2 text-right text-xs font-bold text-slate-400">— crippleboli</p>
       </div>
     </div>
 
-    <div class="flex-1 sketch-box p-6 shadow-sm flex flex-col justify-between">
+    <div class="flex-1 sketch-box p-8 shadow-sm flex flex-col justify-between">
       <div class="divide-y divide-slate-100 flex flex-col justify-between h-full">
+        
         <div>
-          <div class="content-row font-bold text-blue-600 uppercase text-[10px] tracking-widest">01. Projects / 项目展示</div>
+          <div class="content-row font-bold text-blue-600 uppercase text-xs tracking-widest">01. Projects / 项目展示</div>
           <div class="content-row space-x-3">
-            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[10px] text-slate-600 hover:border-blue-400 cursor-pointer">个人主页模板</span>
-            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[10px] text-slate-600 hover:border-blue-400 cursor-pointer">C++ 高性能服务器</span>
+            <span class="px-3 py-1 bg-slate-50 rounded border border-slate-200 text-[13px] text-slate-600 hover:border-blue-400 cursor-pointer transition-colors">个人主页模板</span>
+            <span class="px-3 py-1 bg-slate-50 rounded border border-slate-200 text-[13px] text-slate-600 hover:border-blue-400 cursor-pointer transition-colors">C++ 高性能服务器</span>
           </div>
         </div>
 
         <div>
-          <div class="content-row font-bold text-emerald-600 uppercase text-[10px] tracking-widest">02. Basic / 基础代码</div>
+          <div class="content-row font-bold text-emerald-600 uppercase text-xs tracking-widest">02. Basic / 基础代码</div>
           <div class="content-row space-x-3">
-            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[10px] text-slate-600 hover:border-emerald-400 cursor-pointer">内存管理</span>
-            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[10px] text-slate-600 hover:border-emerald-400 cursor-pointer">并发锁机制</span>
+            <span class="px-3 py-1 bg-slate-50 rounded border border-slate-200 text-[13px] text-slate-600 hover:border-emerald-400 cursor-pointer transition-colors">内存管理</span>
+            <span class="px-3 py-1 bg-slate-50 rounded border border-slate-200 text-[13px] text-slate-600 hover:border-emerald-400 cursor-pointer transition-colors">并发锁机制</span>
           </div>
         </div>
 
         <div>
-          <div class="content-row font-bold text-orange-600 uppercase text-[10px] tracking-widest">03. Algorithms / 算法练习</div>
+          <div class="content-row font-bold text-orange-600 uppercase text-xs tracking-widest">03. Algorithms / 算法练习</div>
           <div class="content-row space-x-3">
-            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[10px] text-slate-600 hover:border-orange-400 cursor-pointer">二叉树 DFS</span>
-            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[10px] text-slate-600 hover:border-orange-400 cursor-pointer">动态规划</span>
+            <span class="px-3 py-1 bg-slate-50 rounded border border-slate-200 text-[13px] text-slate-600 hover:border-orange-400 cursor-pointer transition-colors">二叉树 DFS</span>
+            <span class="px-3 py-1 bg-slate-50 rounded border border-slate-200 text-[13px] text-slate-600 hover:border-orange-400 cursor-pointer transition-colors">动态规划</span>
           </div>
         </div>
 
         <div>
-          <div class="content-row font-bold text-purple-600 uppercase text-[10px] tracking-widest">04. Materials / 参考材料</div>
+          <div class="content-row font-bold text-purple-600 uppercase text-xs tracking-widest">04. Materials / 参考材料</div>
           <div class="content-row space-x-3">
-            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[10px] text-slate-600 hover:border-purple-400 cursor-pointer">CSAPP 笔记</span>
+            <span class="px-3 py-1 bg-slate-50 rounded border border-slate-200 text-[13px] text-slate-600 hover:border-purple-400 cursor-pointer transition-colors">CSAPP 笔记</span>
           </div>
         </div>
 
         <div>
-          <div class="content-row font-bold text-rose-600 uppercase text-[10px] tracking-widest">05. Notes / 随笔感悟</div>
+          <div class="content-row font-bold text-rose-600 uppercase text-xs tracking-widest">05. Notes / 随笔感悟</div>
           <div class="content-row space-x-3">
-            <span class="px-2 py-0.5 bg-slate-50 rounded border border-slate-200 text-[10px] text-slate-600 hover:border-rose-400 cursor-pointer">2026 程序员生存指南</span>
+            <span class="px-3 py-1 bg-slate-50 rounded border border-slate-200 text-[13px] text-slate-600 hover:border-rose-400 cursor-pointer transition-colors">2026 程序员生存指南</span>
           </div>
         </div>
       </div>
@@ -103,19 +104,19 @@
 
       <div class="relative flex items-center">
         <div class="absolute left-[233px] w-4 h-4 rounded-full bg-white border-2 border-slate-800 z-10"></div>
-        <div class="w-[240px] text-right pr-12 font-mono text-[11px] text-slate-400">2026.01.31</div>
-        <div class="flex-1 border-b border-dashed border-slate-300 pb-1 ml-16 overflow-hidden whitespace-nowrap">
-          <span class="font-bold text-xs mr-4 text-blue-600 uppercase">System</span>
-          <span class="text-[12px] text-slate-600 italic">完成 GitHub 大开阔风格布局，上线相对路径头像文件</span>
+        <div class="w-[240px] text-right pr-12 font-mono text-xs text-slate-400">2026.01.31</div>
+        <div class="flex-1 border-b border-dashed border-slate-300 pb-2 ml-16 overflow-hidden whitespace-nowrap">
+          <span class="font-bold text-sm mr-4 text-blue-600 uppercase">System</span>
+          <span class="text-sm text-slate-600 italic">完成 GitHub 大开阔风格布局，上线相对路径头像文件</span>
         </div>
       </div>
 
       <div class="relative flex items-center">
         <div class="absolute left-[233px] w-4 h-4 rounded-full bg-white border-2 border-slate-800 z-10"></div>
-        <div class="w-[240px] text-right pr-12 font-mono text-[11px] text-slate-400">2026.01.25</div>
-        <div class="flex-1 border-b border-dashed border-slate-300 pb-1 ml-16 overflow-hidden whitespace-nowrap">
-          <span class="font-bold text-xs mr-4 text-emerald-600 uppercase">Dev</span>
-          <span class="text-[12px] text-slate-600 italic">初步规划项目文件夹结构：assets, data, js...</span>
+        <div class="w-[240px] text-right pr-12 font-mono text-xs text-slate-400">2026.01.25</div>
+        <div class="flex-1 border-b border-dashed border-slate-300 pb-2 ml-16 overflow-hidden whitespace-nowrap">
+          <span class="font-bold text-sm mr-4 text-emerald-600 uppercase">Dev</span>
+          <span class="text-sm text-slate-600 italic">初步规划项目文件夹结构：assets, data, js...</span>
         </div>
       </div>
 
